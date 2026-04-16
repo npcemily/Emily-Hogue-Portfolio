@@ -1,0 +1,239 @@
+body {
+    background-color: rgb(14, 136, 120);
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: -0.7px;
+    font-weight: 270;
+    font-size: 20px;
+}
+
+.start-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #d3cece;
+    border-top: 2.5px solid #f5f3f2;
+    display: flex;
+}
+
+.start-button {
+    width: 75px;
+    height: 30px;
+    margin: 5px 3.5px 5px 2px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+    background-color: #d3cece;
+    border-top: 2.42px outset #f5f3f2;
+    border-right: 2.42px outset #B9B7B7;
+    border-bottom: 2.42px outset #B9B7B7;
+    border-left: 2.42px outset #f5f3f2;
+    cursor: pointer;
+    anchor-name: --start-button;
+}
+
+.start-button:active, .active {
+    border-top: 2.42px inset black;
+    border-right: 2.42px inset #e4e4e4;
+    border-bottom: 2.42px inset #e4e4e4;
+    border-left: 2.42px inset #B9B7B7;
+}
+
+.start-button img {
+    width: 50%;
+    height: 25px;
+}
+
+.start-button span {
+    font-size: 14.5px;
+    font-weight: 550;
+}
+
+.start-menu {
+    width: 250px;
+    background-color: #d3cece;
+    border-top: 2.35px outset #f5f3f2;
+    border-right: 2.35px outset #B9B7B7;
+    border-bottom: 2.35px outset #B9B7B7;
+    border-left: 2.35px outset #f5f3f2;
+    margin: 0;
+    position: absolute;
+    inset: auto;
+    position-anchor: --start-button;
+    bottom: anchor(top);
+    left: anchor(left);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition:
+        opacity 0.2s,
+        transform 0.2s,
+        overlay 0.2s allow-discrete,
+        display 0.2s allow-discrete;
+}
+
+.start-menu:popover-open {
+    display: grid;
+    opacity: 1;
+    transform: scaleY(1);
+    @starting-style {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+}
+
+.start-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.start-menu li {
+    padding: 8px 4px 8px 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.start-menu li .arrow-icon {
+    width: 10px;
+    height: 10px;
+    margin-left: auto;
+}
+
+.start-menu li img:not(.arrow-icon) {
+    width: 35px;
+    height: 35px;
+}
+
+.start-menu li:hover {
+    color: white;
+    background-color: #05217e;
+}
+
+.programs-item {
+    anchor-name: --programs;
+}
+
+.sub-menu {
+    width: 250px;
+    background-color: #d3cece;
+    border-top: 2.35px outset #f5f3f2;
+    border-right: 2.35px outset #B9B7B7;
+    border-bottom: 2.35px outset #B9B7B7;
+    border-left: 2.35px outset #f5f3f2;
+    margin: 0;
+}
+
+#programs-menu {
+    position: absolute;
+    inset: auto;
+    position-anchor: --programs;
+    top: anchor(top);
+    left: anchor(right);
+}
+
+.sub-menu:popover-open {
+    display: grid;
+}
+
+.sub-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-menu li {
+    padding: 8px 4px 8px 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.sub-menu li img {
+    width: 35px;
+    height: 35px;
+}
+
+.documents-item {
+    anchor-name: --documents;
+}
+
+#documents-menu {
+    position: absolute;
+    inset: auto;
+    position-anchor: --documents;
+    top: anchor(top);
+    left: anchor(right);
+}
+
+.divider {
+    width: 2px;
+    height: 30px;
+    background-color: #9b9a9a;
+    display: flex;
+    align-self: center;
+    box-shadow: 1px 0 0 #f5f3f2;
+}
+
+.sub-divider {
+    width: 2.5px;
+    height: 25px;
+    background-color: #f1f0ef;
+    display: flex;
+    align-self: center;
+    border-right: 2px solid #9b9a9a;
+    border-bottom: 2px solid #9b9a9a;
+    border-radius: 7px;
+    margin-left: 3px;
+}
+
+.start-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.start-icons img {
+    width: 22px;
+    height: 22px;
+}
+
+.start-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 3px;
+}
+
+.clock-tray {
+    display: flex;
+    align-self: center;
+    border-top: 2px solid #9b9a9a;
+    border-left: 2px solid #9b9a9a;
+    border-bottom: 2px solid #f5f3f2;
+    border-right: 2px solid #f5f3f2;
+    padding: 5px;
+    margin-left: 2.5px;
+}
+
+.clock-tray img {
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+}
+
+#clock {
+    font-size: 17.5px;
+    font-weight: 350;
+    margin-left: 10px;
+}

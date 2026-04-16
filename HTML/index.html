@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/styles.css" rel="stylesheet">
+    <title>Emily Hogue Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <script src="/JS/main.js"></script>
+</head>
+<body>
+    <main>
+        <div class="start-bar">
+            <button popovertarget="start-menu" class="start-button">
+                <img src="/images/windows-logo.png" alt="Windows Logo">
+                <span>Start</span>
+            </button>
+            <div popover id="start-menu" class="start-menu">
+                <ul>
+                    <li popovertarget="programs-menu" class="programs-item"><img src="/images/programs-icon.png" alt="Programs Icon">Programs
+                    <img src="/images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon"></li>
+                    <div popover id="programs-menu" class="sub-menu">
+                        <ul>
+                            <li><img src="/images/internet-explorer-icon.png" alt="Internet Explorer Icon">Internet Explorer</li>
+                            <li><img src="/images/paint-icon.png" alt="Paint Icon">Paint</li>
+                            <li><img src="/images/pinball-icon.png" alt="Pinball Icon">3D Pinball</li>
+                            <li><img src="/images/minesweeper-icon.png" alt="Minesweeper Icon">Minesweeper</li>
+                            <li><img src="/images/notepad-icon.png" alt="Notepad Icon">Notepad</li>
+                        </ul>
+                    </div>
+                    <li popovertarget="documents-menu" class="documents-item"><img src="/images/documents-icon.png" alt="Documents Icon">Documents
+                    <img src="/images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon"></li>
+                    <div popover id="documents-menu" class="sub-menu">
+                        <ul>
+                            <li><img src="/images/person-icon.png" alt="Person Icon">About Me</li>
+                            <li><img src="/images/resume-icon.png" alt="Resume Icon">Experience</li>
+                            <li><img src="/images/certificate-icon.png" alt="Certificate Icon">Skills</li>
+                            <li><img src="/images/envelope-icon.png" alt="Envelope Icon">Contact</li>
+                        </ul>
+                    </div>
+                    <li><img src="/images/settings-icon.png" alt="Settings Icon">Settings</li>
+                    <li><img src="/images/help-icon.png" alt="Help Icon">Help</li>
+                    <li><img src="/images/run-icon.png" alt="Run Icon">Run...</li>
+                </ul>
+            </div>
+            <div class="divider"></div>
+            <div class="sub-divider"></div>
+            <div class="start-icons">
+                <img src="/images/internet-explorer-icon.png" alt="Internet Explorer Icon">
+                <img src="/images/envelope-icon.png" alt="Envelope Icon">
+                <img src="/images/desktop-icon.png" alt="Desktop Icon">
+            </div>
+            <div class="divider"></div>
+            <div class="sub-divider"></div>
+            <div class="start-right">
+                <div class="divider"></div>
+                <div class="clock-tray">
+                    <img src="/images/calendar-clock-icon.png" alt="Calendar Clock Icon">
+                    <img src="/images/speaker-icon.png" alt="Speaker Icon">
+                    <div id="clock">3:30 PM</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
