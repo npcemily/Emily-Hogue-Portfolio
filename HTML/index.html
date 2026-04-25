@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <title>Emily Hogue Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap"
+        rel="stylesheet">
     <script src="../JS/main.js"></script>
 </head>
+
 <body>
     <main>
         <div class="start-bar">
@@ -19,25 +23,58 @@
             </button>
             <div popover id="start-menu" class="start-menu">
                 <ul>
-                    <li popovertarget="programs-menu" class="programs-item"><img src="../images/programs-icon.png" alt="Programs Icon">Programs
-                    <img src="../images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon"></li>
+                    <li popovertarget="programs-menu" class="programs-item">
+                        <img src="../images/programs-icon.png" alt="Programs Icon">
+                        Programs
+                        <img src="../images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon">
+                    </li>
                     <div popover id="programs-menu" class="sub-menu">
                         <ul>
-                            <li><img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">Internet Explorer</li>
-                            <li><img src="../images/paint-icon.png" alt="Paint Icon">Paint</li>
-                            <li><img src="../images/pinball-icon.png" alt="Pinball Icon">3D Pinball</li>
-                            <li><img src="../images/minesweeper-icon.png" alt="Minesweeper Icon">Minesweeper</li>
-                            <li><img src="../images/notepad-icon.png" alt="Notepad Icon">Notepad</li>
+                            <li>
+                                <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">
+                                Internet Explorer
+                            </li>
+                            <li>
+                                <img src="../images/paint-icon.png" alt="Paint Icon">
+                                Paint
+                            </li>
+                            <li>
+                                <img src="../images/pinball-icon.png" alt="Pinball Icon">
+                                3D Pinball
+                            </li>
+                            <li>
+                                <img src="../images/minesweeper-icon.png" alt="Minesweeper Icon">
+                                Minesweeper
+                            </li>
+                            <li>
+                                <img src="../images/notepad-icon.png" alt="Notepad Icon">
+                                Notepad
+                            </li>
                         </ul>
                     </div>
-                    <li popovertarget="documents-menu" class="documents-item"><img src="../images/documents-icon.png" alt="Documents Icon">Documents
-                    <img src="../images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon"></li>
+                    <li popovertarget="documents-menu" class="documents-item">
+                        <img src="../images/documents-icon.png" alt="Documents Icon">
+                        Documents
+                        <img src="../images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon">
+                    </li>
                     <div popover id="documents-menu" class="sub-menu">
                         <ul>
-                            <li><img src="../images/person-icon.png" alt="Person Icon">About Me</li>
-                            <li><img src="../images/resume-icon.png" alt="Resume Icon">Experience</li>
-                            <li><img src="../images/certificate-icon.png" alt="Certificate Icon">Skills</li>
-                            <li><img src="../images/envelope-icon.png" alt="Envelope Icon">Contact</li>
+                            <li class="menu-launch" data-title="About Me" data-content="about-content">
+                                <img src="../images/person-icon.png" alt="Person Icon">
+                                About Me
+                            </li>
+                            <li class="menu-launch" data-title="Projects" data-content="projects-content">
+                                <img src="../images/resume-icon.png" alt="Resume Icon">
+                                Projects
+                            </li>
+                            <li class="menu-launch" data-title="Skills" data-content="skills-content">
+                                <img src="../images/certificate-icon.png" alt="Certificate Icon">
+                                Skills
+                            </li>
+                            <li class="menu-launch" data-title="Contact" data-content="contact-content">
+                                <img src="../images/envelope-icon.png" alt="Envelope Icon">
+                                Contact
+                            </li>
                         </ul>
                     </div>
                     <li><img src="../images/settings-icon.png" alt="Settings Icon">Settings</li>
@@ -63,6 +100,68 @@
                 </div>
             </div>
         </div>
+        <div id="about-content" class="window-template" hidden>
+            <p>Hello! I'm Emily.<br>
+                This is my Windows 98 style portfolio.
+                jkdfgkdfghudr<br>
+                dfgnidfgif<br>
+                ifndgidfjgidfg <br>
+                dkfjngkujdrgh<br>
+                dfkigjoirdhg<br>
+                sjdfpojdogiesifg<br>
+                kdfngufdhgui<br>
+                jkdfgkdfghudr<br>
+                dfgnidfgif<br>
+                ifndgidfjgidfg <br>
+                dkfjngkujdrgh<br>
+                dfkigjoirdhg<br>
+                sjdfpojdogiesifg<br>
+                kdfngufdhgui<br>
+                jkdfgkdfghudr<br>
+                dfgnidfgif<br>
+                ifndgidfjgidfg <br>
+                dkfjngkujdrgh<br>
+                dfkigjoirdhg<br>
+                sjdfpojdogiesifg<br>
+                kdfngufdhgui<br>
+                ifndgidfjgidfg <br>
+                dkfjngkujdrgh<br>
+                dfkigjoirdhg<br>
+                sjdfpojdogiesifg<br>
+                kdfngufdhgui<br>
+                kdngjfdhngfdkgn</p>
+        </div>
+        <div id="projects-content" class="window-template" hidden>
+            <div class="inner-window">
+                <p>Here are some of my projects:</p>
+                <ul>
+                    <li><a href="#" target="_blank">Project 1</a></li>
+                    <li><a href="#" target="_blank">Project 2</a></li>
+                    <li><a href="#" target="_blank">Project 3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="skills-content" class="window-template" hidden>
+            <div class="inner-window">
+                <p>Here are some of my skills:</p>
+                <ul>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+        </div>
+        <div id="contact-content" class="window-template" hidden>
+            <div class="inner-window">
+                <p>You can reach me at:</p>
+                <ul>
+                    <li>Email: emily@example.com</li>
+                    <li>Phone: (123) 456-7890</li>
+                </ul>
+            </div>
+        </div>
+
     </main>
 </body>
+
 </html>
