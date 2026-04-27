@@ -246,44 +246,45 @@ body {
 
 .window {
     position: absolute;
+    box-sizing: border-box;
     background-color: #c0c0c0;
     border-top: 2.5px outset #dad9d8;
     border-right: 2.5px outset #B9B7B7;
     border-bottom: 2.5px outset #B9B7B7;
     border-left: 2.5px outset #dad9d8;
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
-    max-height: calc(100vh - 60px);
-    min-height: 0;
 }
 
-.window-content {
+.window-body {
+    padding: 10px 10px 20px 10px;
+    box-sizing: border-box;
+    height: calc(100% - 28px);
+}
+
+.inner-window * {
+    margin: 0;
+}
+
+.inner-window {
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
     background-color: #dad9d8;
-    display: flex;
-    flex: 1;
-    padding: 10px;
-    margin: 10px;
+    padding: 8px;
     border-top: 2.42px inset #B9B7B7;
     border-right: 2.42px inset #e4e4e4;
     border-bottom: 2.42px inset #e4e4e4;
     border-left: 2.42px inset #B9B7B7;
 }
 
-.window-content * {
-    margin: 0;
-}
-
 .window-titlebar {
-    position: sticky;
-    top: 0;
+    height: 28px;
     background: linear-gradient(to right, #000080, #1084d0);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4px 6px;
-    font-weight: 550;
 }
 
 .window-controls {

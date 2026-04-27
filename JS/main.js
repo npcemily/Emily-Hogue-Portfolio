@@ -73,12 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="win-btn close">X</button>
                     </div>
                 </div>
-                <div class="window-content"></div>
+                <div class="window-body">
+                    <div class="inner-window"></div>
+                </div>
             `;
 
             document.body.appendChild(this.el);
 
-            this.contentContainer = this.el.querySelector('.window-content');
+            this.contentContainer = this.el.querySelector('.inner-window');
             const contentNodes = Array.from(this.content.childNodes);
             contentNodes.forEach(node => {
                 const clone = node.cloneNode(true);
@@ -88,11 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
             this.el.style.display = 'block';
 
             const width = 400;
+            const height = 400;
+
             this.el.style.width = width + 'px';
+            this.el.style.height = height + 'px';
             this.el.style.left = (window.innerWidth - width) / 2 + 'px';
-            this.el.style.top = (window.innerHeight - this.el.offsetHeight) / 2 + 'px';
-            this.el.style.maxHeight = (window.innerHeight - 80) + 'px';
-            this.el.style.overflow = 'auto';
+            this.el.style.top = (window.innerHeight - height) / 2 + 'px';
 
             WindowManager.bringToFront(this.el);
 
