@@ -1,15 +1,45 @@
 body {
     background-color: rgb(14, 136, 120);
-    font-family: "Tomorrow", sans-serif;
+    font-family: "PT Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     letter-spacing: -0.7px;
     font-weight: 270;
     font-size: 20px;
+    overflow: hidden;
 }
 
 .window-template[hidden] {
     display: none;
+}
+
+.desktop {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 6px;
+    max-width: 90px;
+}
+
+.desktop img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.desktop span {
+    color: #e2e1e1;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.7px;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .start-bar {
@@ -56,8 +86,8 @@ body {
 
 .start-button span {
     font-size: 16px;
-    font-weight: 500;
-    font-family: "Tomorrow", sans-serif;
+    font-weight: 700;
+    font-family: "PT Sans", sans-serif;
     letter-spacing: -0.7px;
 }
 
@@ -107,7 +137,8 @@ body {
     align-items: center;
     gap: 10px;
     cursor: pointer;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 400;
     letter-spacing: -0.9px;
 }
 
@@ -185,7 +216,7 @@ body {
 }
 
 .divider {
-    width: 2px;
+    width: 1.5px;
     height: 30px;
     background-color: #9b9a9a;
     display: flex;
@@ -280,7 +311,8 @@ body {
     border-right: 2.42px inset #e4e4e4;
     border-bottom: 2.42px inset #e4e4e4;
     border-left: 2.42px inset #B9B7B7;
-    font-weight: 300;
+    font-size: 19px;
+    font-weight: 400;
     letter-spacing: -0.9px;
 }
 
