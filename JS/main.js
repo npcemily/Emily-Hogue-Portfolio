@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span>${this.title}</span>
                     <div class="window-controls">
                         <button class="win-btn minimize">_</button>
-                        <button class="win-btn maximize">□</button>
+                        <button class="win-btn maximize">&#9744;</button>
                         <button class="win-btn close">X</button>
                     </div>
                 </div>
