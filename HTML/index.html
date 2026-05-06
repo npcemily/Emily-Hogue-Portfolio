@@ -16,15 +16,22 @@
 <body>
     <main>
         <div class="desktop">
-            <img src="../images/recycle-bin-icon.png" alt="Recycle Bin Icon">
-            <span class="menu-launch" data-title="Recycle Bin" data-content="recycle-content">Recycle Bin</span>
-            <img src="../images/computer-icon.png" alt="Computer Icon">
-            <span class="menu-launch" data-title="My Computer" data-content="computer-content">My Computer</span>
-            <img src="../images/documents-icon.png" alt="Documents Icon">
-            <span class="menu-launch" data-title="My Documents" data-content="documents-content">My Documents</span>
-            <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">
-            <span class="menu-launch" data-title="Internet Explorer" data-content="internet-content">Internet
-                Explorer</span>
+            <img src="../images/recycle-bin-icon.png" alt="Recycle Bin Icon" class="menu-launch"
+                data-title="Recycle Bin" data-content="recycle-content">
+            <span class="menu-launch" data-title="Recycle Bin" data-content="recycle-content">
+                Recycle Bin</span>
+            <img src="../images/computer-icon.png" alt="Computer Icon" class="menu-launch" data-title="My Computer"
+                data-content="computer-content">
+            <span class="menu-launch" data-title="My Computer" data-content="computer-content">
+                My Computer</span>
+            <img src="../images/documents-icon.png" alt="Documents Icon" class="menu-launch" data-title="My Documents"
+                data-content="documents-content">
+            <span class="menu-launch" data-title="My Documents" data-content="documents-content">
+                My Documents</span>
+            <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon" class="menu-launch"
+                data-title="Internet Explorer" data-content="internet-content">
+            <span class="menu-launch" data-title="Internet Explorer" data-content="internet-content">
+                Internet Explorer</span>
         </div>
         <div class="start-bar">
             <button popovertarget="start-menu" class="start-button">
@@ -36,7 +43,7 @@
                     <li popovertarget="programs-menu" class="programs-item">
                         <img src="../images/programs-icon.png" alt="Programs Icon">
                         Programs
-                        <img src="../images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon">
+                        <img src="../images/arrow-right-icon.png" alt="Arrow Icon" class="arrow-icon">
                     </li>
                     <div popover id="programs-menu" class="sub-menu">
                         <ul>
@@ -65,7 +72,7 @@
                     <li popovertarget="documents-menu" class="documents-item">
                         <img src="../images/documents-icon.png" alt="Documents Icon">
                         Documents
-                        <img src="../images/arrow-icon.png" alt="Arrow Icon" class="arrow-icon">
+                        <img src="../images/arrow-right-icon.png" alt="Arrow Icon" class="arrow-icon">
                     </li>
                     <div popover id="documents-menu" class="sub-menu">
                         <ul>
@@ -112,7 +119,23 @@
         </div>
         <div id="about-content" class="window-template" hidden>
             <p>Hello! I'm Emily.<br>
-                This is my Windows 98 style portfolio.
+                I'm a recent software engineering graduate with a lifelong love for computers.
+                I grew up playing any PC game my mom would get me, with my favorite being Nancy Drew
+                (I guess I've always loved having a problem to solve). In my teenage years I was first introduced
+                to coding by decking out my MySpace page, albeit oblivious to the fact that I was even coding in
+                the first place.
+                <br><br>
+                While this has always been a hobby of mine, I never considered it as a career path.
+                I obtained my first Bachelor's degree in music but realized it was not something I wanted to do
+                for the rest of my life. As I seriously considered my options, I realized that technology was
+                the only field that I could see myself being happy and excelling in. I received my second Bachelor's
+                in software engineering in March 2026 and am currently looking for a full-time, remote or local,
+                web development or software development position. I am most passionate about front-end development
+                but am open to any opportunities that will allow me to learn and grow as a developer.
+                <br><br>
+                When I'm not coding, you can usually find me playing video games (some things never change),
+                reading, going for walks, or playing with my two cats Nala and Daisy. I also enjoy geeking out on
+                coding ASMR or CSS tips and tricks videos on YouTube.
             </p>
         </div>
         <div id="projects-content" class="window-template" hidden>
@@ -132,11 +155,9 @@
             </ul>
         </div>
         <div id="contact-content" class="window-template" hidden>
-            <p>You can reach me at:</p>
-            <ul>
-                <li>Email: emily@example.com</li>
-                <li>Phone: (123) 456-7890</li>
-            </ul>
+            <p>If you're interested in discussing a job opportunity, you can reach me at my email
+                <a href="mailto:hogue_emily@yahoo.com">here</a>.
+            </p>
         </div>
         <div id="recycle-content" class="window-template" hidden>
             <p style="text-align: center;">This folder is empty.</p>

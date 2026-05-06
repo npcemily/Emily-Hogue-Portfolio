@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="window-titlebar">
                     <span>${this.title}</span>
                     <div class="window-controls">
-                        <button class="win-btn minimize">_</button>
-                        <button class="win-btn maximize">&#9744;</button>
-                        <button class="win-btn close">X</button>
+                        <button class="window-btn minimize">_</button>
+                        <button class="window-btn maximize">&#9744;</button>
+                        <button class="window-btn close">X</button>
                     </div>
                 </div>
                 <div class="window-body">
