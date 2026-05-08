@@ -73,6 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="window-btn close">X</button>
                     </div>
                 </div>
+                <div class="window-subtitlebar">
+                    <div class="sub-divider"></div>
+                    <span><u>F</u>ile</span>
+                    <span><u>E</u>dit</span>
+                    <span><u>V</u>iew</span>
+                    <span><u>G</u>o</span>
+                    <span>F<u>a</u>vorites</span>
+                    <span><u>H</u>elp</span>
+                </div>
                 <div class="window-body">
                     <div class="inner-window"></div>
                 </div>
@@ -89,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             this.el.style.display = 'block';
 
-            const width = 400;
-            const height = 400;
+            const width = 550;
+            const height = 500;
 
             this.el.style.width = width + 'px';
             this.el.style.height = height + 'px';

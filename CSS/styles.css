@@ -328,9 +328,9 @@ body {
 }
 
 .window-body {
-    padding: 10px;
+    padding: 3px;
     box-sizing: border-box;
-    height: calc(100% - 36px);
+    height: calc(100% - 70px);
 }
 
 .inner-window * {
@@ -341,7 +341,7 @@ body {
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
-    background-color: #dad9d8;
+    background-color: #ffffff;
     padding: 8px;
     border-top: 2.42px inset #B9B7B7;
     border-right: 2.42px inset #e4e4e4;
@@ -388,6 +388,26 @@ body {
     cursor: pointer;
     margin: 0;
     padding: 0;
+}
+
+.window-subtitlebar {
+    height: 22px;
+    margin: 2px 3px 2px 3px;
+    border: solid 2px #979797;
+    padding: 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    box-shadow: inset 1px 1px 0 #f5f3f2,
+        inset -1px -1px 0 #B9B7B7,
+        1px 1px 0 #f5f3f2;
+}
+
+.window-subtitlebar .sub-divider {
+    margin-left: 1px;
+    height: 20px;
 }
 
 a {
