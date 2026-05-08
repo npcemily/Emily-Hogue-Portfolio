@@ -417,3 +417,16 @@ a {
 a:visited {
     color: #b40bba;
 }
+
+.cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.cat-image {
+    width: 225px;
+    height: auto;
+}
