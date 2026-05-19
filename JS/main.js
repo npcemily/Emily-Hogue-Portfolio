@@ -52,51 +52,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     class Win98Window {
-        constructor({ title, content }) {
+        static windows = [];
+        static zIndex = 200;
+        static instancesByTitle = {};
+
+        constructor({ title, content, icon }) {
+            if (Win98Window.instancesByTitle[title]) {
+                const existing = Win98Window.instancesByTitle[title];
+
+                if (existing.minimized) {
+                    existing.restore();
+                } else {
+                    existing.activate();
+                }
+
+                return;
+            }
+
+            this.id = crypto.randomUUID();
             this.title = title;
             this.content = content;
+            this.icon = icon;
+            this.minimized = false;
+
             this.createWindow();
             this.makeDraggable();
+            this.createTaskbarButton();
+
+            Win98Window.windows.push(this);
+            this.activate();
+            Win98Window.instancesByTitle[this.title] = this;
         }
 
         createWindow() {
             this.el = document.createElement('div');
             this.el.classList.add('window');
-            this.el.style.position = 'absolute';
+            this.el.dataset.id = this.id;
 
             this.el.innerHTML = `
-                <div class="window-titlebar">
-                    <span>${this.title}</span>
-                    <div class="window-controls">
-                        <button class="window-btn minimize">_</button>
-                        <button class="window-btn maximize">&#9744;</button>
-                        <button class="window-btn close">X</button>
-                    </div>
+            <div class="window-titlebar">
+                <span>${this.title}</span>
+                <div class="window-controls">
+                    <button class="window-btn minimize">_</button>
+                    <button class="window-btn maximize">&#9744;</button>
+                    <button class="window-btn close">X</button>
                 </div>
-                <div class="window-subtitlebar">
-                    <div class="sub-divider"></div>
-                    <span><u>F</u>ile</span>
-                    <span><u>E</u>dit</span>
-                    <span><u>V</u>iew</span>
-                    <span><u>G</u>o</span>
-                    <span>F<u>a</u>vorites</span>
-                    <span><u>H</u>elp</span>
-                </div>
-                <div class="window-body">
-                    <div class="inner-window"></div>
-                </div>
-            `;
+            </div>
+            <div class="window-subtitlebar">
+                <div class="sub-divider"></div>
+                <span><u>F</u>ile</span>
+                <span><u>E</u>dit</span>
+                <span><u>V</u>iew</span>
+                <span><u>G</u>o</span>
+                <span>F<u>a</u>vorites</span>
+                <span><u>H</u>elp</span>
+            </div>
+            <div class="window-body">
+                <div class="inner-window"></div>
+            </div>
+        `;
 
             document.body.appendChild(this.el);
 
             this.contentContainer = this.el.querySelector('.inner-window');
-            const contentNodes = Array.from(this.content.childNodes);
-            contentNodes.forEach(node => {
-                const clone = node.cloneNode(true);
-                this.contentContainer.appendChild(clone);
+            Array.from(this.content.childNodes).forEach(node => {
+                this.contentContainer.appendChild(node.cloneNode(true));
             });
-
-            this.el.style.display = 'block';
 
             const width = 550;
             const height = 500;
@@ -106,23 +127,92 @@ document.addEventListener('DOMContentLoaded', () => {
             this.el.style.left = (window.innerWidth - width) / 2 + 'px';
             this.el.style.top = (window.innerHeight - height) / 2 + 'px';
 
-            WindowManager.bringToFront(this.el);
-
             this.setupControls();
             this.setupFocus();
         }
 
+        createTaskbarButton() {
+            const container = document.querySelector('.taskbar-windows');
+
+            this.taskBtn = document.createElement('button');
+            this.taskBtn.classList.add('taskbar-button');
+
+            if (this.icon) {
+                const img = document.createElement('img');
+                img.src = this.icon;
+                img.classList.add('taskbar-icon');
+                this.taskBtn.appendChild(img);
+            }
+
+            const span = document.createElement('span');
+            span.innerText = this.title;
+            this.taskBtn.appendChild(span);
+
+            this.taskBtn.addEventListener('click', () => {
+                if (this.minimized) {
+                    this.restore();
+                } else if (this.isActive()) {
+                    this.minimize();
+                } else {
+                    this.activate();
+                }
+            });
+
+            container.appendChild(this.taskBtn);
+        }
+
         setupControls() {
-            const closeBtn = this.el.querySelector('.close');
-            closeBtn.addEventListener('click', () => {
-                this.el.remove();
+            this.el.querySelector('.close').addEventListener('click', () => {
+                this.close();
+            });
+
+            this.el.querySelector('.minimize').addEventListener('click', () => {
+                this.minimize();
             });
         }
 
         setupFocus() {
             this.el.addEventListener('mousedown', () => {
-                WindowManager.bringToFront(this.el);
+                this.activate();
             });
+        }
+
+        activate() {
+            Win98Window.windows.forEach(w => w.deactivate());
+
+            this.el.style.display = 'block';
+            this.el.style.zIndex = ++Win98Window.zIndex;
+
+            this.el.classList.add('active-window');
+            this.taskBtn.classList.add('active-task');
+            this.minimized = false;
+        }
+
+        deactivate() {
+            this.el.classList.remove('active-window');
+            this.taskBtn.classList.remove('active-task');
+        }
+
+        minimize() {
+            this.el.style.display = 'none';
+            this.taskBtn.classList.remove('active-task');
+            this.minimized = true;
+        }
+
+        restore() {
+            this.el.style.display = 'block';
+            this.activate();
+        }
+
+        isActive() {
+            return this.taskBtn.classList.contains('active-task');
+        }
+
+        close() {
+            this.el.remove();
+            this.taskBtn.remove();
+            delete Win98Window.instancesByTitle[this.title];
+            Win98Window.windows = Win98Window.windows.filter(w => w !== this);
         }
 
         makeDraggable() {
@@ -157,10 +247,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const templateId = item.dataset.content;
             const template = document.getElementById(templateId);
 
+            const iconImg = item.tagName === 'IMG'
+                ? item
+                : item.querySelector('img');
+
+            const iconSrc = iconImg ? iconImg.getAttribute('src') : null;
+
             if (template) {
                 new Win98Window({
                     title,
-                    content: template
+                    content: template,
+                    icon: iconSrc
                 });
             }
         });

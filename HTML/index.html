@@ -16,22 +16,22 @@
 <body>
     <main>
         <div class="desktop">
-            <img src="../images/recycle-bin-icon.png" alt="Recycle Bin Icon" class="menu-launch"
-                data-title="Recycle Bin" data-content="recycle-content">
-            <span class="menu-launch" data-title="Recycle Bin" data-content="recycle-content">
-                Recycle Bin</span>
-            <img src="../images/computer-icon.png" alt="Computer Icon" class="menu-launch" data-title="My Computer"
-                data-content="computer-content">
-            <span class="menu-launch" data-title="My Computer" data-content="computer-content">
-                My Computer</span>
-            <img src="../images/documents-icon.png" alt="Documents Icon" class="menu-launch" data-title="My Documents"
-                data-content="documents-content">
-            <span class="menu-launch" data-title="My Documents" data-content="documents-content">
-                My Documents</span>
-            <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon" class="menu-launch"
-                data-title="Internet Explorer" data-content="internet-content">
-            <span class="menu-launch" data-title="Internet Explorer" data-content="internet-content">
-                Internet Explorer</span>
+            <div class="desktop-icon menu-launch" data-title="Recycle Bin" data-content="recycle-content">
+                <img src="../images/recycle-bin-icon.png">
+                <span>Recycle Bin</span>
+            </div>
+            <div class="desktop-icon menu-launch" data-title="My Computer" data-content="computer-content">
+                <img src="../images/computer-icon.png" alt="Computer Icon">
+                <span>My Computer</span>
+            </div>
+            <div class="desktop-icon menu-launch" data-title="My Documents" data-content="documents-content">
+                <img src="../images/documents-icon.png" alt="Documents Icon">
+                <span>My Documents</span>
+            </div>
+            <div class="desktop-icon menu-launch" data-title="Internet Explorer" data-content="internet-content">
+                <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">
+                <span>Internet Explorer</span>
+            </div>
         </div>
         <div class="start-bar">
             <button popovertarget="start-menu" class="start-button">
@@ -108,6 +108,7 @@
             </div>
             <div class="divider"></div>
             <div class="sub-divider"></div>
+            <div class="taskbar-windows"></div>
             <div class="start-right">
                 <div class="divider"></div>
                 <div class="clock-tray">

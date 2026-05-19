@@ -61,6 +61,14 @@ body {
     max-width: 90px;
 }
 
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 6px;
+}
+
 .desktop img {
     width: 40px;
     height: 40px;
@@ -354,13 +362,20 @@ body {
 
 .window-titlebar {
     height: 28px;
-    background: linear-gradient(to right, #000080, #1084d0);
     color: white;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 4px 6px;
+}
+
+.window.active-window .window-titlebar {
+    background: linear-gradient(to right, #000080, #1084d0);
+}
+
+.window .window-titlebar {
+    background: linear-gradient(to right, #6d6d6d, #b6b6b6);
 }
 
 .window-controls {
@@ -429,4 +444,48 @@ a:visited {
 .cat-image {
     width: 225px;
     height: auto;
+}
+
+.taskbar-windows {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    overflow: hidden;
+    margin-left: 4px;
+}
+
+.taskbar-button {
+    height: 28px;
+    background-color: #d3cece;
+    border-top: 2px outset #f5f3f2;
+    border-right: 2px outset #B9B7B7;
+    border-bottom: 2px outset #B9B7B7;
+    border-left: 2px outset #f5f3f2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 90px;
+    max-width: 180px;
+    padding: 0 8px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.taskbar-button .taskbar-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.taskbar-button.active-task {
+    border-top: 2px inset #808080;
+    border-left: 2px inset #808080;
+    border-bottom: 2px inset #ffffff;
+    border-right: 2px inset #ffffff;
+    background-color: #e4e4e4;
 }
