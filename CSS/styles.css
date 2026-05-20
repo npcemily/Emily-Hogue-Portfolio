@@ -477,6 +477,10 @@ a:visited {
     text-overflow: clip;
 }
 
+.taskbar-button:hover {
+    cursor: pointer;
+}
+
 .taskbar-button .taskbar-icon {
     width: 18px;
     height: 18px;
@@ -488,4 +492,22 @@ a:visited {
     border-bottom: 2px inset #ffffff;
     border-right: 2px inset #ffffff;
     background-color: #e4e4e4;
+}
+
+.desktop-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 4px;
+    gap: 40px;
+    font-size: smaller;
+}
+
+.desktop-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
 }

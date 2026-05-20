@@ -241,25 +241,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.querySelectorAll('.menu-launch').forEach(item => {
-        item.addEventListener('click', () => {
-            const title = item.dataset.title;
-            const templateId = item.dataset.content;
-            const template = document.getElementById(templateId);
+    document.addEventListener('click', event => {
+        const item = event.target.closest('.menu-launch');
+        if (!item) return;
 
-            const iconImg = item.tagName === 'IMG'
-                ? item
-                : item.querySelector('img');
+        const title = item.dataset.title;
+        const templateId = item.dataset.content;
+        const template = document.getElementById(templateId);
 
-            const iconSrc = iconImg ? iconImg.getAttribute('src') : null;
+        const iconImg = item.tagName === 'IMG'
+            ? item
+            : item.querySelector('img');
 
-            if (template) {
-                new Win98Window({
-                    title,
-                    content: template,
-                    icon: iconSrc
-                });
-            }
-        });
+        const iconSrc = iconImg ? iconImg.getAttribute('src') : null;
+
+        if (template) {
+            new Win98Window({
+                title,
+                content: template,
+                icon: iconSrc
+            });
+        }
     });
 });
