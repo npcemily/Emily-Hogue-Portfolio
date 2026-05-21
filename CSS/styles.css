@@ -511,3 +511,29 @@ a:visited {
     gap: 6px;
     cursor: pointer;
 }
+
+.desktop-list li img {
+    width: 40px;
+    height: 40px;
+}
+
+.ie-toolbar {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background-color: #c0c0c0;
+    border-bottom: 2px solid #808080;
+}
+
+.ie-address {
+    flex: 1;
+    padding: 2px 4px;
+    font-size: 14px;
+}
+
+.ie-frame {
+    width: 100%;
+    height: calc(100% - 40px);
+    border: none;
+    background: white;
+}

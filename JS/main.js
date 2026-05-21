@@ -129,6 +129,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
             this.setupControls();
             this.setupFocus();
+
+            const goBtn = this.el.querySelector('.ie-go-btn');
+
+            if (goBtn) {
+                const input = this.el.querySelector('.ie-address');
+                const frame = this.el.querySelector('.ie-frame');
+
+                goBtn.addEventListener('click', () => {
+                    let url = input.value.trim();
+
+                    if (!url.startsWith('http')) {
+                        url = 'https://' + url;
+                    }
+
+                    frame.src = url;
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        goBtn.click();
+                    }
+                });
+            }
         }
 
         createTaskbarButton() {

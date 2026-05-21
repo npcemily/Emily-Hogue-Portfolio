@@ -200,7 +200,24 @@
             <p style="text-align: center;">This folder is empty.</p>
         </div>
         <div id="computer-content" class="window-template" hidden>
-            <p>Currently under construction. Try again later!</p>
+            <ul class="desktop-list">
+                <li>
+                    <img src="../images/floppy-disk-icon.png" alt="Floppy Disk Icon">
+                    3&frac12; Floppy (A:)
+                </li>
+                <li>
+                    <img src="../images/c-drive-icon.png" alt="C Drive Icon">
+                    (C:)
+                </li>
+                <li>
+                    <img src="../images/disc-drive-icon.png" alt="Disc Drive Icon">
+                    (D:)
+                </li>
+                <li>
+                    <img src="../images/control-panel-icon.png" alt="Control Panel Icon">
+                    Control Panel
+                </li>
+            </ul>
         </div>
         <div id="documents-content" class="window-template" hidden>
             <ul class="desktop-list">
@@ -223,7 +240,12 @@
             </ul>
         </div>
         <div id="internet-content" class="window-template" hidden>
-            <p>Currently under construction. Try again later!</p>
+            <div class="ie-toolbar">
+                <input type="text" class="ie-address" value="https://www.google.com/search?igu=1">
+                <button class="ie-go-btn">Go</button>
+            </div>
+            <iframe class="ie-frame" src="https://www.google.com/search?igu=1" width="100%" height="100%"
+                frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" scrolling="yes"></iframe>
         </div>
     </main>
 </body>
