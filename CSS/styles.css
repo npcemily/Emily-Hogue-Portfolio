@@ -97,6 +97,10 @@ body {
     display: flex;
 }
 
+.start-icons:hover {
+    cursor: pointer;
+}
+
 .start-button {
     width: 80px;
     height: 30px;
