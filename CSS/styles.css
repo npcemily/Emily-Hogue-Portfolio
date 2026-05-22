@@ -474,7 +474,12 @@ a:visited {
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: clip;
+}
+
+.taskbar-button span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .taskbar-button:hover {
@@ -517,23 +522,81 @@ a:visited {
     height: 40px;
 }
 
-.ie-toolbar {
+.internet-window .ie-toolbar {
+    height: 34px;
     display: flex;
-    gap: 4px;
-    padding: 4px;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 6px;
+    box-sizing: border-box;
     background-color: #c0c0c0;
-    border-bottom: 2px solid #808080;
+    border-bottom: 1px solid #808080;
+    font-size: 14px;
+    margin-left: 2px;
 }
 
 .ie-address {
     flex: 1;
-    padding: 2px 4px;
-    font-size: 14px;
+    height: 20px;
+    border-top: 2px inset #808080;
+    border-left: 2px inset #808080;
+    border-bottom: 2px inset #ffffff;
+    border-right: 2px inset #ffffff;
+}
+
+.ie-address:focus {
+    outline: none;
 }
 
 .ie-frame {
     width: 100%;
-    height: calc(100% - 40px);
+    height: 100%;
     border: none;
+}
+
+.internet-window .window-body {
+    height: calc(100% - 104px);
+}
+
+.internet-window .inner-window {
+    padding: 0;
+    height: 100%;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.ie-address {
+    appearance: none;
+    width: 100%;
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 28px;
     background: white;
+    border-top: 2px inset #808080;
+    border-left: 2px inset #808080;
+    border-bottom: 2px inset #ffffff;
+    border-right: 2px inset #ffffff;
+}
+
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #c0c0c0;
+    background-image: url("../images/arrow-down-icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8px 8px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid #676363;
+    border-bottom: 2px solid #676363;
+    pointer-events: none;
+    box-sizing: border-box;
 }

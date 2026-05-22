@@ -47,7 +47,7 @@
                     </li>
                     <div popover id="programs-menu" class="sub-menu">
                         <ul>
-                            <li>
+                            <li class="menu-launch" data-title="Internet Explorer" data-content="internet-content">
                                 <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">
                                 Internet Explorer
                             </li>
@@ -240,12 +240,8 @@
             </ul>
         </div>
         <div id="internet-content" class="window-template" hidden>
-            <div class="ie-toolbar">
-                <input type="text" class="ie-address" value="https://www.google.com/search?igu=1">
-                <button class="ie-go-btn">Go</button>
-            </div>
-            <iframe class="ie-frame" src="https://www.google.com/search?igu=1" width="100%" height="100%"
-                frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" scrolling="yes"></iframe>
+            <iframe class="ie-frame" src="https://www.google.com/search?igu=1" frameborder="0"
+                allow="autoplay; encrypted-media" scrolling="yes"></iframe>
         </div>
     </main>
 </body>

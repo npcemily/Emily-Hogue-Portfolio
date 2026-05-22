@@ -87,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
         createWindow() {
             this.el = document.createElement('div');
             this.el.classList.add('window');
+            if (this.title === 'Internet Explorer') {
+                this.el.classList.add('internet-window');
+            }
             this.el.dataset.id = this.id;
 
             this.el.innerHTML = `
@@ -107,10 +110,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>F<u>a</u>vorites</span>
                 <span><u>H</u>elp</span>
             </div>
+            ${this.title === 'Internet Explorer' ? `
+            <div class="ie-toolbar">
+                <span>Address:</span>
+                <div class="select-wrapper">
+                    <select class="ie-address">
+                        <option value="https://www.google.com/search?igu=1">
+                            https://www.google.com/search?igu=1
+                        </option>
+
+                        <option value="https://npcemily.github.io/Weather-App/">
+                            https://npcemily.github.io/Weather-App/
+                        </option>
+
+                        <option value="https://npcemily.github.io/Landing-Page-Example/">
+                            https://npcemily.github.io/Landing-Page-Example/
+                        </option>
+
+                        <option value="https://npcemily.github.io/Fictional-Portfolio/">
+                            https://npcemily.github.io/Fictional-Portfolio/
+                        </option>
+                    </select>
+                </div>
+            </div>
+            ` : ''}
             <div class="window-body">
                 <div class="inner-window"></div>
             </div>
-        `;
+            `;
 
             document.body.appendChild(this.el);
 
@@ -119,8 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.contentContainer.appendChild(node.cloneNode(true));
             });
 
-            const width = 550;
-            const height = 500;
+            const width = this.title === 'Internet Explorer' ? 950 : 550;
+            const height = this.title === 'Internet Explorer' ? 600 : 500;
 
             this.el.style.width = width + 'px';
             this.el.style.height = height + 'px';
@@ -130,26 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
             this.setupControls();
             this.setupFocus();
 
-            const goBtn = this.el.querySelector('.ie-go-btn');
+            const dropdown = this.el.querySelector('.ie-address');
+            const frame = this.el.querySelector('.ie-frame');
 
-            if (goBtn) {
-                const input = this.el.querySelector('.ie-address');
-                const frame = this.el.querySelector('.ie-frame');
-
-                goBtn.addEventListener('click', () => {
-                    let url = input.value.trim();
-
-                    if (!url.startsWith('http')) {
-                        url = 'https://' + url;
-                    }
-
-                    frame.src = url;
-                });
-
-                input.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') {
-                        goBtn.click();
-                    }
+            if (dropdown && frame) {
+                dropdown.addEventListener('change', () => {
+                    frame.src = dropdown.value;
                 });
             }
         }
