@@ -51,7 +51,7 @@
                                 <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">
                                 Internet Explorer
                             </li>
-                            <li>
+                            <li class="menu-launch" data-title="Paint" data-content="paint-content">
                                 <img src="../images/paint-icon.png" alt="Paint Icon">
                                 Paint
                             </li>
@@ -128,7 +128,6 @@
                 to coding by decking out my MySpace page, albeit oblivious to the fact that I was even coding in
                 the first place.
                 <br><br>
-                While this has always been a hobby of mine, I never considered it as a career path.
                 I obtained my first Bachelor's degree in music but realized it was not something I wanted to do
                 for the rest of my life. As I seriously considered my options, I realized that technology was
                 the only field that I could see myself being happy and excelling in. I received my second Bachelor's
@@ -172,7 +171,8 @@
             <br>
             <p>The main tech stack I use for my projects are:</p>
             <ul>
-                <li>HTML/CSS</li>
+                <li>HTML</li>
+                <li>CSS</li>
                 <li>JavaScript</li>
                 <li>Python</li>
                 <li>Java</li>
@@ -242,8 +242,12 @@
             </ul>
         </div>
         <div id="internet-content" class="window-template" hidden>
-            <iframe class="ie-frame" src="https://www.google.com/search?igu=1" frameborder="0"
+            <iframe class="app-frame" src="https://www.google.com/search?igu=1" frameborder="0"
                 allow="autoplay; encrypted-media" scrolling="yes"></iframe>
+        </div>
+        <div id="paint-content" class="window-template" hidden>
+            <iframe class="app-frame" src="https://jspaint.app" frameborder="0">
+            </iframe>
         </div>
     </main>
 </body>

@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (this.title === 'Internet Explorer') {
                 this.el.classList.add('internet-window');
             }
+            if (this.title === 'Paint') {
+                this.el.classList.add('paint-window');
+            }
             this.el.dataset.id = this.id;
 
             this.el.innerHTML = `
@@ -146,8 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.contentContainer.appendChild(node.cloneNode(true));
             });
 
-            const width = this.title === 'Internet Explorer' ? 950 : 550;
-            const height = this.title === 'Internet Explorer' ? 600 : 500;
+            const width =
+                this.title === 'Internet Explorer' ? 950 :
+                    this.title === 'Paint' ? 900 :
+                        550;
+            const height =
+                this.title === 'Internet Explorer' ? 600 :
+                    this.title === 'Paint' ? 550 :
+                        500;
 
             this.el.style.width = width + 'px';
             this.el.style.height = height + 'px';
@@ -158,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.setupFocus();
 
             const dropdown = this.el.querySelector('.ie-address');
-            const frame = this.el.querySelector('.ie-frame');
+            const frame = this.el.querySelector('.app-frame');
 
             if (dropdown && frame) {
                 dropdown.addEventListener('change', () => {
