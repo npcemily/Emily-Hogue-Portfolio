@@ -564,7 +564,9 @@ a:visited {
 }
 
 .internet-window .inner-window,
-.paint-window .inner-window {
+.paint-window .inner-window,
+.minesweeper-window .inner-window,
+.notepad-window .inner-window {
     padding: 0;
     margin: 0;
     height: 100%;
