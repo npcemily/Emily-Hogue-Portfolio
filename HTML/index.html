@@ -32,6 +32,26 @@
                 <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">
                 <span>Internet Explorer</span>
             </div>
+            <div class="desktop-icon menu-launch" data-title="Paint" data-content="paint-content">
+                <img src="../images/paint-icon.png" alt="Paint Icon">
+                <span>Paint</span>
+            </div>
+            <div class="desktop-icon menu-launch" data-title="3D Pinball" data-content="pinball-content">
+                <img src="../images/pinball-icon.png" alt="Pinball Icon">
+                <span>3D Pinball</span>
+            </div>
+            <div class="desktop-icon menu-launch" data-title="Minesweeper" data-content="minesweeper-content">
+                <img src="../images/minesweeper-icon.png" alt="Minesweeper Icon">
+                <span>Minesweeper</span>
+            </div>
+            <div class="desktop-icon menu-launch" data-title="Solitaire" data-content="solitaire-content">
+                <img src="../images/solitaire-icon.png" alt="Solitaire Icon">
+                <span>Solitaire</span>
+            </div>
+            <div class="desktop-icon menu-launch" data-title="Notepad" data-content="notepad-content">
+                <img src="../images/notepad-icon.png" alt="Notepad Icon">
+                <span>Notepad</span>
+            </div>
         </div>
         <div class="start-bar">
             <button popovertarget="start-menu" class="start-button">
@@ -47,10 +67,6 @@
                     </li>
                     <div popover id="programs-menu" class="sub-menu">
                         <ul>
-                            <li class="menu-launch" data-title="Internet Explorer" data-content="internet-content">
-                                <img src="../images/internet-explorer-icon.png" alt="Internet Explorer Icon">
-                                Internet Explorer
-                            </li>
                             <li class="menu-launch" data-title="Paint" data-content="paint-content">
                                 <img src="../images/paint-icon.png" alt="Paint Icon">
                                 Paint
@@ -62,6 +78,10 @@
                             <li class="menu-launch" data-title="Minesweeper" data-content="minesweeper-content">
                                 <img src="../images/minesweeper-icon.png" alt="Minesweeper Icon">
                                 Minesweeper
+                            </li>
+                            <li class="menu-launch" data-title="Solitaire" data-content="solitaire-content">
+                                <img src="../images/solitaire-icon.png" alt="Solitaire Icon">
+                                Solitaire
                             </li>
                             <li class="menu-launch" data-title="Notepad" data-content="notepad-content">
                                 <img src="../images/notepad-icon.png" alt="Notepad Icon">
@@ -257,6 +277,10 @@
         </div>
         <div id="minesweeper-content" class="window-template" hidden>
             <iframe class="app-frame" src="https://98.js.org/programs/minesweeper/" frameborder="0">
+            </iframe>
+        </div>
+        <div id="solitaire-content" class="window-template" hidden>
+            <iframe class="app-frame" src="https://98.js.org/programs/js-solitaire/" frameborder="0">
             </iframe>
         </div>
         <div id="notepad-content" class="window-template" hidden>

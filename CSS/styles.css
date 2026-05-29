@@ -55,10 +55,12 @@ body {
     left: 10px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-items: center;
-    gap: 6px;
-    max-width: 90px;
+    gap: 6px 25px;
+    max-width: 190px;
+    max-height: calc(100vh - 40px);
 }
 
 .desktop-icon {
@@ -80,10 +82,10 @@ body {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: -0.7px;
-    text-decoration: underline;
     cursor: pointer;
     text-align: center;
     margin-bottom: 15px;
+    max-width: 90px;
 }
 
 .start-bar {
@@ -567,6 +569,7 @@ a:visited {
 .paint-window .inner-window,
 .pinball-window .inner-window,
 .minesweeper-window .inner-window,
+.solitaire-window .inner-window,
 .notepad-window .inner-window {
     padding: 0;
     margin: 0;
@@ -637,4 +640,8 @@ a:visited {
     width: 102%;
     height: calc(100% + 110px);
     border: none;
+}
+
+.solitaire-window .window-body {
+    height: calc(100% - 71px);
 }

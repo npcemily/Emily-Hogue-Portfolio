@@ -99,6 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (this.title === 'Minesweeper') {
                 this.el.classList.add('minesweeper-window');
             }
+            if (this.title === 'Solitaire') {
+                this.el.classList.add('solitaire-window');
+            }
             if (this.title === 'Notepad') {
                 this.el.classList.add('notepad-window');
             }
@@ -163,8 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.title === 'Paint' ? 900 :
                         this.title === '3D Pinball' ? 615 :
                             this.title === 'Minesweeper' ? 525 :
-                                this.title === 'Notepad' ? 750 :
-                                    550;
+                                this.title === 'Solitaire' ? 600 :
+                                    this.title === 'Notepad' ? 750 :
+                                        550;
             const height =
                 this.title === 'Internet Explorer' ? 600 :
                     this.title === 'Paint' ? 550 :
